@@ -9,8 +9,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sprout.Exam.WebApp.Data;
-using Sprout.Exam.WebApp.Models;
+using Sprout.Exam.Application.Factories;
+using Sprout.Exam.Application.Interfaces;
+using Sprout.Exam.Application.Repositories;
+using Sprout.Exam.Application.Services;
+using Sprout.Exam.Domain.Entities;
+using Sprout.Exam.Domain.Models;
 
 namespace Sprout.Exam.WebApp
 {
@@ -28,7 +32,11 @@ namespace Sprout.Exam.WebApp
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly("Sprout.Exam.Domain")));
+
+            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            services.AddScoped<IEmployeeService,EmployeeService>();
+            services.AddScoped<IEmployeeSalaryCalculationFactory, EmployeeSalaryCalculationFactory>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 

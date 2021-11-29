@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Sprout.Exam.WebApp.Data.Migrations
+namespace Sprout.Exam.Domain.Entities.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

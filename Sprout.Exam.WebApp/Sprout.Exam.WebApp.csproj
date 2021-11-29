@@ -29,10 +29,14 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\views\employees\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sprout.Exam.Application\Sprout.Exam.Application.csproj" />
     <ProjectReference Include="..\Sprout.Exam.Business\Sprout.Exam.Business.csproj" />
+    <ProjectReference Include="..\Sprout.Exam.Domain\Sprout.Exam.Domain.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
