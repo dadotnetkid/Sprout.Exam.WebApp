@@ -8,5 +8,5 @@ through pages and lot of awesome , its like par with some spa js framework like 
 
 the most I struggle is the way that the project is built I didnt use business as project instead of application, so I add another project that would store all my services,
 and also domain project which is contain most of my data access and model,
-also the manual dto I seldom used does and separate dto in each action not used to it.
+also the manual dto I seldom used those and separate dto in each action not used to it.
 and also didnt use factory pattern before maybe I used it and I heard it but I really not using it I always used the services to transform everything;
